@@ -205,7 +205,7 @@ export default Kapsule({
               .join(' &rarr; ')
         }</div>${state.tooltipContent(d.data, d)}`);
       })
-      .on('mouseout', () => state.tooltip.content(false));
+      .on('mouseout', () => {state.tooltip.content(false); console.log("OUT!")});
 
     newSlice.append('path')
       .attr('class', 'main-arc')
