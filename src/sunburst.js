@@ -113,7 +113,7 @@ export default Kapsule({
     state.svg = el.append('svg');
     state.canvas = state.svg.append('g');
 
-    state.tooltip = Tooltip()(el);
+    state.tooltip = Tooltip()(el).content('<div>TOOLTIP GONNA GETCHYA</div>');
 
     // Reset focus by clicking on canvas
     state.svg
@@ -195,7 +195,7 @@ export default Kapsule({
       .on('mouseover', (ev, d) => {
         ev.stopPropagation();
         state.onHover && state.onHover(d.data);
-        console.log("hovering:", d.name, d.value);
+        //console.log("hovering:", d.name, d.value);
         state.tooltip.content( `<div class="tooltip-title">${ //!!state.showTooltip(d.data, d) &&
           state.tooltipTitle
             ? state.tooltipTitle(d.data, d)
@@ -205,7 +205,7 @@ export default Kapsule({
               .join(' &rarr; ')
         }</div>${state.tooltipContent(d.data, d)}`);
       })
-      .on('mouseout', () => {state.tooltip.content(false); console.log("OUT!");});
+      .on('mouseout', () => {state.tooltip.content(false);});
 
     newSlice.append('path')
       .attr('class', 'main-arc')
