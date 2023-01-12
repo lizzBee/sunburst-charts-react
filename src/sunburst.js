@@ -321,6 +321,7 @@ export default Kapsule({
     }
 
     function angularTextFits(d) {
+      console.log("the d:", d)
       const deltaAngle = state.angleScale(d.x1) - state.angleScale(d.x0);
       const r = Math.max(0, (state.radiusScale(d.y0) + state.radiusScale(d.y1)) / 2);
       const perimeter = r * deltaAngle;
