@@ -195,8 +195,8 @@ export default Kapsule({
       .on('mouseover', (ev, d) => {
         ev.stopPropagation();
         state.onHover && state.onHover(d.data);
-        console.log("hovering:", d.name, d.value)
-        state.tooltip.content(!!state.showTooltip(d.data, d) && `<div class="tooltip-title">${
+        console.log("hovering:", d.name, d.value);
+        state.tooltip.content( `<div class="tooltip-title">${ //!!state.showTooltip(d.data, d) &&
           state.tooltipTitle
             ? state.tooltipTitle(d.data, d)
             : getNodeStack(d)
@@ -205,7 +205,7 @@ export default Kapsule({
               .join(' &rarr; ')
         }</div>${state.tooltipContent(d.data, d)}`);
       })
-      .on('mouseout', () => {state.tooltip.content(false); console.log("OUT!")});
+      .on('mouseout', () => {state.tooltip.content(false); console.log("OUT!");});
 
     newSlice.append('path')
       .attr('class', 'main-arc')
