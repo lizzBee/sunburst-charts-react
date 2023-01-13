@@ -209,7 +209,7 @@ export default Kapsule({
 
     newSlice.append('path')
       .attr('class', 'main-arc')
-      .attr('id', d => {d.id + "_slice" })
+      //.attr('id', d => {d.id + "_slice" })
       .style('stroke', d => strokeColorOf(d.data, d.parent))
       .style('fill', d => colorOf(d.data, d.parent));
 
@@ -242,6 +242,7 @@ export default Kapsule({
 
     allSlices
       .style('opacity', 1)
+      .attr('id', d => {d.id + "_slice" })
       .attr('class', d => [
         'slice',
         ...(`${nodeClassNameOf(d.data) || ''}`.split(' ').map(str => str.trim()))
