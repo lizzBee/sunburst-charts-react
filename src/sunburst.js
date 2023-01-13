@@ -195,7 +195,7 @@ export default Kapsule({
       .on('mouseover', (ev, d) => {
         ev.stopPropagation();
         state.onHover && state.onHover(d.data);
-        //console.log("hovering:", d.name, d.value);
+        console.log("hovering :-|");
         state.tooltip.content(!!this.showTooltip(d.data, d) && `<div class="tooltip-title">${ //!!state.showTooltip(d.data, d) &&
           state.tooltipTitle
             ? state.tooltipTitle(d.data, d)
