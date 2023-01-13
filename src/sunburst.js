@@ -242,11 +242,11 @@ export default Kapsule({
 
     allSlices
       .style('opacity', 1)
-      .attr('id', d => {d.id + "_slice" })
       .attr('class', d => [
-        'slice',
+        'sliced',
         ...(`${nodeClassNameOf(d.data) || ''}`.split(' ').map(str => str.trim()))
-      ].filter(s => s).join(' '));
+      ].filter(s => s).join(' '))
+      .attr('id', d => {d.id + "_slice" });
 
     allSlices.select('path.main-arc').transition(transition)
       .attrTween('d', d => () => state.arc(d))
