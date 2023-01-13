@@ -195,7 +195,7 @@ export default Kapsule({
       .on('mouseover', (ev, d) => {
         ev.stopPropagation();
         state.onHover && state.onHover(d.data);
-        console.log("hovering :-P");
+        console.log("hovering :-P", d.id);
         state.tooltip.content(`<div>${d.data}</div>`) /*!!this.showTooltip(d.data, d) && `<div class="tooltip-title">${ //!!state.showTooltip(d.data, d) &&
           state.tooltipTitle
             ? state.tooltipTitle(d.data, d)
@@ -209,6 +209,7 @@ export default Kapsule({
 
     newSlice.append('path')
       .attr('class', 'main-arc')
+      .attr('id', d => d.id)
       .style('stroke', d => strokeColorOf(d.data, d.parent))
       .style('fill', d => colorOf(d.data, d.parent));
 
